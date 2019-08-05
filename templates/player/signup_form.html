@@ -2,21 +2,21 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-    Login
+    Signup
 {% endblock %}
 
 {% block content %}
 
     <form role="form"
-          action="{% url 'player_login' %}"
+          action="{% url 'player_signup' %}"
           method="post">
         {% csrf_token %}
 
-        <p>Please login.</p>
+        <p>Please fill in the form below to create an account.</p>
 
         {{ form|crispy }}
 
-        <button type="submit" class="btn btn-success">Sign in</button>
+        <button type="submit" class="btn btn-success">Sign up</button>
     </form>
 
 {% endblock %}

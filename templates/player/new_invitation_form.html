@@ -1,16 +1,16 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}
-    New Invitation
+New Invitation
 {% endblock %}
 
+
 {% block content %}
+    <form method="post" action="{% url 'player_new_invitation' %}">
+        {{ form | crispy }}
 
-    <form action="{% url 'player_new_invitation' %}"
-          method="post">
-          {{ form }}
-
-          {% csrf_token %}
-          <button type="submit">Send the Invitation</button>
+        {% csrf_token %}
+        <button type="submit">Send the invitation</button>
     </form>
 {% endblock %}
